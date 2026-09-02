@@ -345,7 +345,21 @@
 
       .host {
         padding: 20px 0;
+        display: grid;
+        grid-template-columns: 64px 1fr;
+        align-items: center;
+        gap: 16px;
         border-block: 1px solid var(--line);
+      }
+
+      .host-photo {
+        width: 64px;
+        height: 64px;
+        display: block;
+        object-fit: cover;
+        border: 2px solid var(--ink);
+        border-radius: 50%;
+        box-shadow: 4px 4px 0 var(--orange);
       }
 
       .host p {
@@ -523,7 +537,7 @@
           <h2 class="section-heading" id="pick-heading">Three ways onto the board.</h2>
           <div class="challenge-grid">
             <article class="challenge">
-              <img class="challenge-art" src="assets/push-ups.png" alt="Geometric figure demonstrating a push-up" />
+              <img class="challenge-art" src="assets/push-ups.png" alt="Illustrated crab demonstrating a push-up" />
               <div class="challenge-copy">
                 <span class="challenge-num">01 / REPS</span>
                 <h3>Push-ups</h3>
@@ -531,7 +545,7 @@
               </div>
             </article>
             <article class="challenge">
-              <img class="challenge-art" src="assets/dips.png" alt="Geometric figure demonstrating a triceps dip" />
+              <img class="challenge-art" src="assets/dips.png" alt="Illustrated crab demonstrating a triceps dip" />
               <div class="challenge-copy">
                 <span class="challenge-num">02 / REPS</span>
                 <h3>Dips</h3>
@@ -539,7 +553,7 @@
               </div>
             </article>
             <article class="challenge">
-              <img class="challenge-art" src="assets/bar-hold.png" alt="Geometric figure demonstrating a timed hold on dip bars" />
+              <img class="challenge-art" src="assets/bar-hold.png" alt="Illustrated crab demonstrating a timed hold on dip bars" />
               <div class="challenge-copy">
                 <span class="challenge-num">03 / TIME</span>
                 <h3>Dip bar hold</h3>
@@ -556,8 +570,11 @@
           <h2 class="section-heading" id="how-heading">How it works.</h2>
           <img class="logo" src="logo.png" alt="Rust and Reps" />
           <div class="host">
-            <p>Challenge host</p>
-            <a href="https://github.com/orhun" target="_blank" rel="noreferrer">github.com/orhun ↗</a>
+            <img class="host-photo" src="assets/orhun.png" alt="Orhun Parmaksiz" />
+            <div>
+              <p>Challenge host</p>
+              <a href="https://github.com/orhun" target="_blank" rel="noreferrer">github.com/orhun ↗</a>
+            </div>
           </div>
         </div>
 
