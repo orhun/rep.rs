@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Rust & Reps is a recurring fitness challenge for Rust developers, launching at EuroRust at the JetBrains booth."
+      content="Rust & Reps is a fitness challenge for Rust developers, launching with RustRover at the JetBrains booth at EuroRust."
     />
     <meta name="author" content="Orhun Parmaksiz" />
     <meta name="theme-color" content="#253f23" />
@@ -13,30 +13,33 @@
 
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:site_name" content="Rust &amp; Reps" />
-    <meta property="og:title" content="Rust &amp; Reps | The Rust Fitness Challenge" />
+    <meta property="og:site_name" content="Rust & Reps" />
+    <meta property="og:title" content="Rust & Reps | The Rust Fitness Challenge" />
     <meta
       property="og:description"
-      content="A recurring fitness challenge for Rust developers. The first challenge launches at EuroRust at the JetBrains booth."
+      content="A fitness challenge for Rust developers. The first challenge launches with RustRover at the JetBrains booth at EuroRust."
     />
-    <meta property="og:image" content="sticker.png" />
+    <meta property="og:url" content="https://rep.rs/" />
+    <meta property="og:image" content="https://rep.rs/sticker.png" />
+    <meta property="og:image:secure_url" content="https://rep.rs/sticker.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1263" />
     <meta property="og:image:height" content="1246" />
-    <meta property="og:image:alt" content="Rust &amp; Reps fitness challenge sticker" />
+    <meta property="og:image:alt" content="Rust & Reps fitness challenge sticker" />
 
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Rust &amp; Reps | The Rust Fitness Challenge" />
+    <meta name="twitter:title" content="Rust & Reps | The Rust Fitness Challenge" />
     <meta
       name="twitter:description"
-      content="A recurring fitness challenge for Rust developers, launching at EuroRust at the JetBrains booth."
+      content="A fitness challenge for Rust developers, launching with RustRover at the JetBrains booth at EuroRust."
     />
-    <meta name="twitter:image" content="sticker.png" />
-    <meta name="twitter:image:alt" content="Rust &amp; Reps fitness challenge sticker" />
+    <meta name="twitter:image" content="https://rep.rs/sticker.png" />
+    <meta name="twitter:image:alt" content="Rust & Reps fitness challenge sticker" />
 
     <link rel="icon" href="sticker.png" type="image/png" />
     <link rel="apple-touch-icon" href="sticker.png" />
-    <title>Rust &amp; Reps | The Rust Fitness Challenge</title>
+    <link rel="canonical" href="https://rep.rs/" />
+    <title>Rust & Reps | The Rust Fitness Challenge</title>
     <style>
       :root {
         --ink: #1c1c1a;
@@ -126,6 +129,10 @@
         font-weight: 900;
         letter-spacing: 0.15em;
         text-transform: uppercase;
+      }
+
+      .hero .eyebrow {
+        color: var(--ink);
       }
 
       h1 {
@@ -276,6 +283,53 @@
         color: white;
       }
 
+      .rustrover-section {
+        background: var(--cream-dark);
+        border-bottom: 2px solid var(--ink);
+      }
+
+      .rustrover-inner {
+        width: min(1120px, calc(100% - 40px));
+        margin: 0 auto;
+        padding: 74px 0;
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        align-items: center;
+        gap: clamp(36px, 7vw, 88px);
+      }
+
+      .rustrover-copy p {
+        max-width: 520px;
+        margin: 0 0 28px;
+        font-size: 1.12rem;
+      }
+
+      .rustrover-link {
+        display: inline-block;
+        padding: 12px 18px;
+        background: var(--ink);
+        color: white;
+        border: 2px solid var(--ink);
+        box-shadow: 5px 5px 0 var(--orange);
+        font-weight: 800;
+        text-decoration: none;
+        transition:
+          transform 150ms ease,
+          box-shadow 150ms ease;
+      }
+
+      .rustrover-link:hover {
+        transform: translate(2px, 2px);
+        box-shadow: 3px 3px 0 var(--orange);
+      }
+
+      .rustrover-art {
+        width: 100%;
+        display: block;
+        border: 2px solid var(--ink);
+        box-shadow: 9px 9px 0 var(--rust);
+      }
+
       .details {
         display: grid;
         grid-template-columns: 0.8fr 1.2fr;
@@ -346,6 +400,14 @@
         text-transform: uppercase;
       }
 
+      .prize-strip ul {
+        margin: 14px 0 0;
+        padding-left: 20px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px 28px;
+      }
+
       .safety {
         margin: 26px 0 0;
         color: #696966;
@@ -373,7 +435,8 @@
 
       @media (max-width: 800px) {
         .hero,
-        .details {
+        .details,
+        .rustrover-inner {
           grid-template-columns: 1fr;
         }
 
@@ -419,6 +482,10 @@
         .footer-inner {
           flex-direction: column;
         }
+
+        .prize-strip ul {
+          grid-template-columns: 1fr;
+        }
       }
     </style>
   </head>
@@ -433,16 +500,14 @@
     <main>
       <section class="hero">
         <div>
-          <p class="eyebrow">A recurring fitness challenge for Rust developers</p>
+          <p class="eyebrow">A fitness challenge for Rust developers</p>
           <h1>Strongly<br /><span class="accent">typed.</span><br />Actually strong.</h1>
-          <p class="lead">
-            Step away from the keyboard. Pick a challenge, set a score and earn your place on the live leaderboard.
-          </p>
+          <p class="lead">Pick a challenge. Set a score. Make the leaderboard.</p>
           <div class="event-card">
             <div class="event-number">01</div>
             <p>
-              <strong>The first challenge launches at <a href="https://eurorust.eu/" target="_blank" rel="noreferrer">EuroRust ↗</a>.</strong>
-              Find Rust &amp; Reps at the <b>JetBrains booth</b> and take your shot.
+              <strong>First challenge: <a href="https://eurorust.eu/" target="_blank" rel="noreferrer">EuroRust ↗</a></strong>
+              Find us at the <b>JetBrains booth</b>.
             </p>
           </div>
         </div>
@@ -462,7 +527,7 @@
               <div class="challenge-copy">
                 <span class="challenge-num">01 / REPS</span>
                 <h3>Push-ups</h3>
-                <p>Keep your form clean and stack up as many good reps as you can.</p>
+                <p>Clean form. Max reps.</p>
               </div>
             </article>
             <article class="challenge">
@@ -470,7 +535,7 @@
               <div class="challenge-copy">
                 <span class="challenge-num">02 / REPS</span>
                 <h3>Dips</h3>
-                <p>Controlled reps, full effort. Show the borrow checker who’s boss.</p>
+                <p>Controlled form. Max reps.</p>
               </div>
             </article>
             <article class="challenge">
@@ -478,7 +543,7 @@
               <div class="challenge-copy">
                 <span class="challenge-num">03 / TIME</span>
                 <h3>Dip bar hold</h3>
-                <p>Lock out, brace and hold above the bars for as long as you can.</p>
+                <p>Lock out and hold.</p>
               </div>
             </article>
           </div>
@@ -498,19 +563,38 @@
 
         <div>
           <ol class="steps">
-            <li>Choose push-ups, dips or a timed dip bar hold.</li>
-            <li>Complete one supervised attempt with a booth team member.</li>
-            <li>Add your name and verified score to the live leaderboard.</li>
-            <li>Come back for the daily winners. They are announced at the booth and online.</li>
+            <li>Pick one challenge.</li>
+            <li>Complete one supervised attempt.</li>
+            <li>Post your verified score.</li>
+            <li>Top the daily leaderboard.</li>
           </ol>
 
           <div class="prize-strip">
-            <strong>Daily prizes:</strong> JetBrains All Products Pack licenses, JetBrains merch, participation stickers and the deliberately tiny <b>1 kg Developer Dumbbell</b>.
+            <strong>Daily prizes</strong>
+            <ul>
+              <li>JetBrains All Products Pack licenses with RustRover</li>
+              <li>JetBrains merch</li>
+              <li>Participation stickers</li>
+              <li>The tiny <b>1 kg Developer Dumbbell</b></li>
+            </ul>
           </div>
 
-          <p class="safety">
-            Participation is voluntary. Equipment is supervised and demonstrations are provided. Stop immediately if you feel pain or discomfort.
-          </p>
+          <p class="safety">Participation is voluntary and supervised. Stop if you feel pain or discomfort.</p>
+        </div>
+      </section>
+
+      <section class="rustrover-section" aria-labelledby="rustrover-heading">
+        <div class="rustrover-inner">
+          <div class="rustrover-copy">
+            <h2 class="section-heading" id="rustrover-heading">With RustRover<br />by JetBrains</h2>
+            <p>
+              RustRover is the JetBrains IDE built for Rust developers. At EuroRust, the team is trading breakpoints for reps at the JetBrains booth.
+            </p>
+            <a class="rustrover-link" href="https://www.jetbrains.com/rust/" target="_blank" rel="noreferrer">Explore RustRover ↗</a>
+          </div>
+          <a href="https://www.jetbrains.com/rust/" target="_blank" rel="noreferrer" aria-label="Visit the RustRover website">
+            <img class="rustrover-art" src="assets/rustrover.png" alt="RustRover, a powerhouse IDE for Rust developers by JetBrains" />
+          </a>
         </div>
       </section>
     </main>
@@ -518,7 +602,7 @@
     <footer>
       <div class="footer-inner">
         <p><strong>Rust &amp; Reps</strong> | Built for the Rust community.</p>
-        <p>First edition: EuroRust · JetBrains booth</p>
+        <p>EuroRust · JetBrains booth</p>
       </div>
     </footer>
   </body>
